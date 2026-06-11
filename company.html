@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要 — 合同会社DFD</title>
+  <meta name="description" content="合同会社DFDの会社概要。商号・所在地・代表者・設立・事業内容などの基本情報を掲載しています。">
+
+  <!-- OGP -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="会社概要 — 合同会社DFD">
+  <meta property="og:description" content="合同会社DFDの会社概要。北九州市を拠点に、民泊・不動産再生・AIソリューション・Webマーケティングを手がけます。">
+  <meta property="og:url"         content="https://dfd-ai.com/company.html">
+  <meta property="og:image"       content="https://dfd-ai.com/ogp.png">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .company-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 64px;
+    }
+
+    .company-block {
+      background: var(--hakuji);
+      border: 1px solid rgba(26,25,23,0.07);
+      padding: 48px 40px;
+    }
+
+    .company-block h3 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--aitetsu);
+      margin-bottom: 20px;
+    }
+
+    .company-block p {
+      font-family: var(--font-mincho);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .company-block .sub {
+      font-family: var(--font-gothic);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(26,25,23,0.55);
+      margin-top: 6px;
+    }
+
+    /* ミッション帯 */
+    .mission-band {
+      background: var(--sumi);
+      padding: 80px 32px;
+      text-align: center;
+    }
+
+    .mission-band blockquote {
+      font-family: var(--font-mincho);
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 600;
+      color: var(--kinari);
+      line-height: 1.8;
+      letter-spacing: 0.1em;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .mission-band cite {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-style: normal;
+      letter-spacing: 0.25em;
+      color: rgba(244,240,230,0.35);
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .company-grid { grid-template-columns: 1fr; }
+      .company-block { padding: 32px 24px; }
+      .mission-band { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">DFD</span>
+      <span class="logo-sub">Digital &amp; Facility Design</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="グローバルナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Company</p>
+    <h1 class="page-hero-title">会社概要</h1>
+  </div>
+</div>
+
+<!-- 会社概要テーブル -->
+<section class="section" aria-labelledby="profile-heading">
+  <div class="section-inner">
+    <p class="section-label fade-in">01 — Profile</p>
+    <h2 id="profile-heading" class="section-heading fade-in">基本情報</h2>
+
+    <div class="fade-in">
+      <table class="info-table">
+        <tbody>
+          <tr>
+            <th scope="row">商号</th>
+            <td>合同会社DFD</td>
+          </tr>
+          <tr>
+            <th scope="row">英文表記</th>
+            <td>Digital &amp; Facility Design LLC.</td>
+          </tr>
+          <tr>
+            <th scope="row">代表者</th>
+            <td>代表社員　金田信秀</td>
+          </tr>
+          <tr>
+            <th scope="row">設立</th>
+            <td>2026年5月18日</td>
+          </tr>
+          <tr>
+            <th scope="row">所在地</th>
+            <!-- TODO: 郵便番号 803-0822 は仮置き。正式な郵便番号を確認後に修正してください -->
+            <td>〒803-0822　福岡県北九州市小倉北区中島1-3-14</td>
+          </tr>
+          <tr>
+            <th scope="row">連絡先</th>
+            <td><a href="mailto:info@dfd-ai.com">info@dfd-ai.com</a></td>
+          </tr>
+          <tr>
+            <th scope="row">事業内容</th>
+            <td>
+              宿泊事業（民泊運営）<br>
+              不動産の再生・活用<br>
+              AIソリューション<br>
+              広告・Webマーケティング
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ハイライト数値 -->
+<div class="company-grid" style="max-width:var(--max-w); margin:0 auto; padding:0 32px 96px;">
+  <div class="company-block fade-in">
+    <h3>Founded</h3>
+    <p>2026<span class="sub">年5月設立</span></p>
+  </div>
+  <div class="company-block fade-in">
+    <h3>Base</h3>
+    <p>北九州<span class="sub">福岡県北九州市小倉北区</span></p>
+  </div>
+  <div class="company-block fade-in">
+    <h3>Services</h3>
+    <p>4<span class="sub">つの事業領域</span></p>
+  </div>
+  <div class="company-block fade-in">
+    <h3>Contact</h3>
+    <p style="font-size:18px; font-family:var(--font-mono); font-weight:400;">
+      info@dfd-ai.com
+      <span class="sub">お気軽にご連絡ください</span>
+    </p>
+  </div>
+</div>
+
+<!-- ミッション -->
+<div class="mission-band">
+  <blockquote class="fade-in">
+    北九州から、人が集まる場所をつくる。<br>
+    AIと空間設計で、新しい価値をつくる。
+    <cite>— DFD Mission Statement</cite>
+  </blockquote>
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark">DFD</div>
+      <div class="footer-logo-sub">Digital &amp; Facility Design</div>
+      <div class="footer-info">
+        <!-- TODO: 郵便番号 803-0822 は仮置き。正式な郵便番号を確認後に修正してください -->
+        合同会社DFD<br>
+        〒803-0822 福岡県北九州市小倉北区中島1-3-14<br>
+        <a href="mailto:info@dfd-ai.com" style="color:rgba(244,240,230,0.45);">info@dfd-ai.com</a>
+      </div>
+      <div class="footer-copy">© 2026 DFD LLC.</div>
+    </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

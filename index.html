@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合同会社DFD — Digital &amp; Facility Design</title>
+  <meta name="description" content="北九州を拠点に、民泊・不動産再生・AIソリューション・Webマーケティングで人が集まる場所をつくる合同会社DFDの公式サイトです。">
+
+  <!-- OGP -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="合同会社DFD — Digital &amp; Facility Design">
+  <meta property="og:description" content="北九州から、人が集まる場所をつくる。AIと空間設計で、新しい価値をつくる。">
+  <meta property="og:url"         content="https://dfd-ai.com/">
+  <meta property="og:image"       content="https://dfd-ai.com/ogp.png">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---- ヒーロー ---- */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 560px;
+      background: var(--sumi);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.55;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-logo-mark {
+      font-family: var(--font-mono);
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--kinari);
+      line-height: 1;
+    }
+
+    .hero-logo-sub {
+      font-family: var(--font-mono);
+      font-size: clamp(9px, 1.2vw, 12px);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: rgba(244, 240, 230, 0.45);
+      margin-top: 8px;
+      text-transform: uppercase;
+    }
+
+    .hero-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(244, 240, 230, 0.2);
+      margin: 32px auto;
+    }
+
+    /* 縦書きメインコピー */
+    .hero-copy-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-copy {
+      writing-mode: vertical-rl;
+      font-family: var(--font-mincho);
+      font-size: clamp(20px, 3.5vw, 32px);
+      font-weight: 600;
+      color: var(--kinari);
+      letter-spacing: 0.15em;
+      line-height: 1.5;
+    }
+
+    .hero-sub {
+      font-family: var(--font-gothic);
+      font-size: clamp(12px, 1.6vw, 15px);
+      font-weight: 300;
+      color: rgba(244, 240, 230, 0.55);
+      letter-spacing: 0.12em;
+      margin-top: 32px;
+    }
+
+    .hero-cta {
+      margin-top: 48px;
+    }
+
+    /* スクロール誘導 */
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-scroll span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: rgba(244, 240, 230, 0.3);
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(244,240,230,0.4), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    /* ---- インデックスセクション ---- */
+    .index-overview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .overview-item {
+      background: var(--hakuji);
+      padding: 48px 40px;
+      border: 1px solid rgba(26, 25, 23, 0.07);
+    }
+
+    .overview-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--aitetsu);
+      margin-bottom: 16px;
+    }
+
+    .overview-title {
+      font-family: var(--font-mincho);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .overview-body {
+      font-size: 13px;
+      line-height: 1.9;
+      color: rgba(26, 25, 23, 0.65);
+    }
+
+    /* CTA セクション */
+    .cta-section {
+      background: var(--sumi);
+      padding: var(--section-py) 32px;
+      text-align: center;
+    }
+
+    .cta-section .section-label { color: rgba(244,240,230,0.35); margin-bottom: 24px; }
+
+    .cta-section h2 {
+      font-family: var(--font-mincho);
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 600;
+      color: var(--kinari);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .cta-section p {
+      font-size: 14px;
+      color: rgba(244,240,230,0.55);
+      margin-bottom: 40px;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .index-overview { grid-template-columns: 1fr; }
+      .overview-item { padding: 32px 24px; }
+      .cta-section { padding: var(--section-py) 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">DFD</span>
+      <span class="logo-sub">Digital &amp; Facility Design</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="グローバルナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero" aria-label="トップビジュアル">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-logo-mark">DFD</div>
+    <div class="hero-logo-sub">Digital &amp; Facility Design</div>
+    <div class="hero-divider" aria-hidden="true"></div>
+    <div class="hero-copy-wrap">
+      <p class="hero-copy">北九州から、人が集まる場所をつくる。</p>
+    </div>
+    <p class="hero-sub">AIと空間設計で、新しい価値をつくる。</p>
+    <div class="hero-cta">
+      <a href="services.html" class="btn btn--light">事業内容を見る</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- 事業概要 -->
+<section class="section" aria-labelledby="overview-heading">
+  <div class="section-inner">
+    <p class="section-label fade-in">01 — Overview</p>
+    <h2 id="overview-heading" class="section-heading fade-in">私たちの事業</h2>
+
+    <div class="index-overview">
+      <div class="overview-item fade-in">
+        <div class="overview-num">01 — Stay</div>
+        <h3 class="overview-title">宿泊事業（民泊）</h3>
+        <p class="overview-body">古民家を丁寧に再生し、旅の記憶に残る宿をつくります。北九州の歴史ある街並みに溶け込む滞在体験を提供します。</p>
+      </div>
+      <div class="overview-item fade-in">
+        <div class="overview-num">02 — Real Estate</div>
+        <h3 class="overview-title">不動産再生</h3>
+        <p class="overview-body">空き家・遊休不動産を取得し、使われなくなった空間に新たな役割を与えます。地域の資産を次世代へつなぎます。</p>
+      </div>
+      <div class="overview-item fade-in">
+        <div class="overview-num">03 — AI</div>
+        <h3 class="overview-title">AIソリューション</h3>
+        <p class="overview-body">AIを活用した業務効率化・コンテンツ制作の支援を行います。中小事業者でも取り入れやすい形で技術を届けます。</p>
+      </div>
+      <div class="overview-item fade-in">
+        <div class="overview-num">04 — Marketing</div>
+        <h3 class="overview-title">広告・Webマーケティング</h3>
+        <p class="overview-body">デジタル広告の運用からWeb制作まで、集客の仕組みをトータルでサポートします。</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 56px;" class="fade-in">
+      <a href="services.html" class="btn btn--dark">詳しい事業内容</a>
+    </div>
+  </div>
+</section>
+
+<!-- 会社について -->
+<section class="section section--dark" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <p class="section-label fade-in">02 — Company</p>
+    <h2 id="about-heading" class="section-heading fade-in">合同会社DFD について</h2>
+    <div class="sep fade-in"></div>
+    <p class="fade-in" style="font-size:15px; max-width:640px; line-height:2; color:rgba(244,240,230,0.75);">
+      2026年5月、福岡県北九州市に設立。<br>
+      空間をつくる技術とデジタルの力を組み合わせ、人が集まり、地域が動きだすきっかけをつくることを目指しています。
+    </p>
+    <div style="margin-top:48px;" class="fade-in">
+      <a href="company.html" class="btn btn--light">会社概要を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" aria-labelledby="cta-heading">
+  <p class="section-label">Contact</p>
+  <h2 id="cta-heading">お問い合わせ</h2>
+  <p>事業に関するご相談・ご連絡はこちらから</p>
+  <a href="contact.html" class="btn btn--light">お問い合わせページへ</a>
+</div>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark">DFD</div>
+      <div class="footer-logo-sub">Digital &amp; Facility Design</div>
+      <div class="footer-info">
+        <!-- TODO: 郵便番号 803-0822 は仮置き。正式な郵便番号を確認後に修正してください -->
+        合同会社DFD<br>
+        〒803-0822 福岡県北九州市小倉北区中島1-3-14<br>
+        <a href="mailto:info@dfd-ai.com" style="color:rgba(244,240,230,0.45);">info@dfd-ai.com</a>
+      </div>
+      <div class="footer-copy">© 2026 DFD LLC.</div>
+    </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* ---- ヒーロー Canvas：建築図面グリッド + 光の点 ---- */
+(function () {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let W, H, dots;
+  const GRID = 60;        // グリッド間隔 px
+  const DOT_COUNT = 18;   // 光の点の数
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    initDots();
+  }
+
+  function initDots() {
+    dots = Array.from({ length: DOT_COUNT }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.5 + 0.5,
+      alpha: Math.random()
+    }));
+  }
+
+  function drawGrid() {
+    ctx.strokeStyle = 'rgba(43, 76, 111, 0.35)';
+    ctx.lineWidth = 0.5;
+
+    // 縦線
+    for (let x = 0; x < W; x += GRID) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
+    }
+    // 横線
+    for (let y = 0; y < H; y += GRID) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+    }
+    // 対角補助線（図面らしさ）
+    ctx.strokeStyle = 'rgba(43, 76, 111, 0.12)';
+    for (let x = -H; x < W; x += GRID * 4) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x + H, H);
+      ctx.stroke();
+    }
+  }
+
+  function drawDots(ts) {
+    dots.forEach(d => {
+      // アルファを時間でゆらゆら
+      d.alpha = 0.3 + 0.5 * (0.5 + 0.5 * Math.sin(ts * 0.001 + d.x));
+
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(200, 119, 46, ${d.alpha})`; // 燈
+      ctx.fill();
+
+      // 移動
+      d.x += d.vx;
+      d.y += d.vy;
+      if (d.x < 0) d.x = W;
+      if (d.x > W) d.x = 0;
+      if (d.y < 0) d.y = H;
+      if (d.y > H) d.y = 0;
+    });
+  }
+
+  function frame(ts) {
+    ctx.clearRect(0, 0, W, H);
+    drawGrid();
+    if (!prefersReduced) drawDots(ts);
+    if (!prefersReduced) requestAnimationFrame(frame);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+
+  if (prefersReduced) {
+    // 静止グリッドのみ描画
+    drawGrid();
+  } else {
+    requestAnimationFrame(frame);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ — 合同会社DFD</title>
+  <meta name="description" content="合同会社DFDへのお問い合わせはinfo@dfd-ai.comまでご連絡ください。">
+
+  <!-- OGP -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="お問い合わせ — 合同会社DFD">
+  <meta property="og:description" content="合同会社DFDへのお問い合わせはinfo@dfd-ai.comまでご連絡ください。">
+  <meta property="og:url"         content="https://dfd-ai.com/contact.html">
+  <meta property="og:image"       content="https://dfd-ai.com/ogp.png">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-size: 15px;
+      line-height: 2;
+      color: rgba(26,25,23,0.7);
+      margin-bottom: 48px;
+    }
+
+    .contact-mail-block {
+      margin-top: 40px;
+    }
+
+    .contact-mail-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--aitetsu);
+      margin-bottom: 12px;
+    }
+
+    .contact-mail-address {
+      font-family: var(--font-mono);
+      font-size: clamp(15px, 2.2vw, 20px);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--sumi);
+      margin-bottom: 16px;
+      word-break: break-all;
+    }
+
+    .contact-info-panel {
+      background: var(--hakuji);
+      border: 1px solid rgba(26,25,23,0.07);
+      padding: 40px;
+    }
+
+    .contact-info-panel h3 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--aitetsu);
+      margin-bottom: 24px;
+    }
+
+    .contact-info-panel table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .contact-info-panel tr {
+      border-bottom: 1px solid rgba(26,25,23,0.07);
+    }
+
+    .contact-info-panel th {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(26,25,23,0.45);
+      text-align: left;
+      padding: 14px 16px 14px 0;
+      width: 100px;
+      vertical-align: top;
+    }
+
+    .contact-info-panel td {
+      padding: 14px 0;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    /* フォームプレースホルダー */
+    .form-placeholder {
+      background: rgba(26,25,23,0.03);
+      border: 1px dashed rgba(26,25,23,0.2);
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .form-placeholder p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: rgba(26,25,23,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .contact-info-panel { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">DFD</span>
+      <span class="logo-sub">Digital &amp; Facility Design</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="グローバルナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Contact</p>
+    <h1 class="page-hero-title">お問い合わせ</h1>
+  </div>
+</div>
+
+<!-- お問い合わせ本文 -->
+<section class="section" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <div class="contact-layout">
+
+      <!-- 左：連絡先 -->
+      <div class="fade-in">
+        <p class="section-label">Get In Touch</p>
+        <h2 id="contact-heading" class="section-heading">ご連絡はメールで</h2>
+
+        <p class="contact-intro">
+          事業に関するご相談、取材・提携のご依頼など、どうぞお気軽にご連絡ください。<br>
+          内容を確認のうえ、担当者よりご返信いたします。
+        </p>
+
+        <div class="contact-mail-block">
+          <p class="contact-mail-label">Email</p>
+          <p class="contact-mail-address">info@dfd-ai.com</p>
+          <a href="mailto:info@dfd-ai.com" class="btn btn--dark">メールを送る</a>
+        </div>
+
+        <!--
+          TODO: Google フォームを導入する場合は、以下のコメントアウトを解除して
+          src に Google フォームの埋め込みURLを入力してください。
+
+          <div style="margin-top: 64px;">
+            <p class="contact-mail-label">Online Form</p>
+            <iframe
+              src="https://docs.google.com/forms/d/e/XXXXXXXXXXXXXXXX/viewform?embedded=true"
+              width="100%"
+              height="600"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="お問い合わせフォーム">
+              読み込んでいます…
+            </iframe>
+          </div>
+        -->
+      </div>
+
+      <!-- 右：会社情報 -->
+      <div class="fade-in">
+        <div class="contact-info-panel">
+          <h3>Company Info</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th>商号</th>
+                <td>合同会社DFD</td>
+              </tr>
+              <tr>
+                <th>代表</th>
+                <td>代表社員　金田信秀</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <!-- TODO: 郵便番号 803-0822 は仮置き。正式な郵便番号を確認後に修正してください -->
+                <td>〒803-0822<br>福岡県北九州市<br>小倉北区中島1-3-14</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td><a href="mailto:info@dfd-ai.com">info@dfd-ai.com</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark">DFD</div>
+      <div class="footer-logo-sub">Digital &amp; Facility Design</div>
+      <div class="footer-info">
+        <!-- TODO: 郵便番号 803-0822 は仮置き。正式な郵便番号を確認後に修正してください -->
+        合同会社DFD<br>
+        〒803-0822 福岡県北九州市小倉北区中島1-3-14<br>
+        <a href="mailto:info@dfd-ai.com" style="color:rgba(244,240,230,0.45);">info@dfd-ai.com</a>
+      </div>
+      <div class="footer-copy">© 2026 DFD LLC.</div>
+    </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

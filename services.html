@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事業内容 — 合同会社DFD</title>
+  <meta name="description" content="合同会社DFDの事業内容。民泊運営・不動産再生・AIソリューション・広告Webマーケティングの4事業を展開しています。">
+
+  <!-- OGP -->
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="事業内容 — 合同会社DFD">
+  <meta property="og:description" content="民泊運営・不動産再生・AIソリューション・Webマーケティング。4つの事業で北九州から価値をつくります。">
+  <meta property="og:url"         content="https://dfd-ai.com/services.html">
+  <meta property="og:image"       content="https://dfd-ai.com/ogp.png">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---- 主力事業（宿泊）---- */
+    .service-primary {
+      background: var(--sumi);
+      padding: var(--section-py) 32px;
+    }
+
+    .service-primary-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .service-primary-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(244,240,230,0.35);
+      margin-bottom: 12px;
+    }
+
+    .service-primary h2 {
+      font-family: var(--font-mincho);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600;
+      color: var(--kinari);
+      line-height: 1.4;
+      margin-bottom: 32px;
+    }
+
+    .service-primary p {
+      font-size: 15px;
+      line-height: 2;
+      color: rgba(244,240,230,0.7);
+    }
+
+    /* 図形プレースホルダー（写真差し替え前提） */
+    .service-visual {
+      aspect-ratio: 4/3;
+      border: 1px solid rgba(244,240,230,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(43,76,111,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43,76,111,0.15) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .service-visual-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: rgba(244,240,230,0.2);
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    /* ---- その他の事業 ---- */
+    .services-list {
+      padding: var(--section-py) 32px;
+    }
+
+    .services-list-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0;
+      border-bottom: 1px solid rgba(26,25,23,0.1);
+    }
+
+    .service-item:first-of-type { border-top: 1px solid rgba(26,25,23,0.1); }
+
+    .service-item-left {
+      padding-top: 4px;
+    }
+
+    .service-item-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--aitetsu);
+      margin-bottom: 12px;
+    }
+
+    .service-item-title {
+      font-family: var(--font-mincho);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .service-item-body {
+      font-size: 15px;
+      line-height: 1.95;
+      color: rgba(26,25,23,0.7);
+    }
+
+    .service-item-body + .service-item-body {
+      margin-top: 20px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .service-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      padding: 5px 12px;
+      border: 1px solid rgba(43,76,111,0.35);
+      color: var(--aitetsu);
+    }
+
+    @media (max-width: 900px) {
+      .service-primary-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .service-primary { padding: var(--section-py) 20px; }
+    }
+
+    @media (max-width: 768px) {
+      .service-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 40px 0;
+      }
+      .services-list { padding: var(--section-py) 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">DFD</span>
+      <span class="logo-sub">Digital &amp; Facility Design</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="グローバルナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ページヘッダー -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Services</p>
+    <h1 class="page-hero-title">事業内容</h1>
+  </div>
+</div>
+
+<!-- 01 宿泊事業（主力・大きく扱う） -->
+<section class="service-primary" aria-labelledby="service-stay">
+  <div class="service-primary-inner">
+    <div class="fade-in">
+      <p class="service-primary-label">01 — Stay / 主力事業</p>
+      <h2 id="service-stay">宿泊事業<br>（民泊）</h2>
+      <p>
+        北九州に残る古民家や空き家を丁寧に再生し、旅の記憶に残る宿をつくります。<br><br>
+        画一的なホテルではなく、その場所の歴史や空気感を大切にした滞在体験を提供することが私たちの目指す姿です。建物が持つ骨格を活かしながら、現代の快適さと和の意匠を組み合わせた空間をデザインします。<br><br>
+        北九州という街が持つ重層的な歴史と、これから訪れる旅人をつなぐ拠点として、一棟一棟に向き合っていきます。
+      </p>
+    </div>
+    <div class="service-visual fade-in" aria-hidden="true">
+      <!-- TODO: 物件写真が用意できたら <img> タグに差し替えてください -->
+      <span class="service-visual-label">Photo Coming Soon</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02〜04 その他事業 -->
+<section class="services-list" aria-labelledby="services-others-heading">
+  <div class="services-list-inner">
+    <p class="section-label fade-in">02–04 — Other Services</p>
+    <h2 id="services-others-heading" class="section-heading fade-in">その他の事業</h2>
+
+    <!-- 02 不動産再生 -->
+    <div class="service-item fade-in">
+      <div class="service-item-left">
+        <div class="service-item-num">02 — Real Estate</div>
+        <h3 class="service-item-title">不動産再生</h3>
+      </div>
+      <div>
+        <p class="service-item-body">
+          空き家・遊休不動産を取得し、使われなくなった空間に新たな役割を与えます。放置されていた建物が、再び人の暮らしや営みの舞台になる瞬間を大切にしています。
+        </p>
+        <p class="service-item-body">
+          単なる売買・賃貸にとどまらず、建物の可能性を引き出す活用提案まで行います。地域の資産を次世代へつないでいくことが、この事業の根にある考え方です。
+        </p>
+        <div class="service-tags">
+          <span class="service-tag">空き家活用</span>
+          <span class="service-tag">遊休不動産</span>
+          <span class="service-tag">リノベーション</span>
+          <span class="service-tag">用途転換</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 AIソリューション -->
+    <div class="service-item fade-in">
+      <div class="service-item-left">
+        <div class="service-item-num">03 — AI Solution</div>
+        <h3 class="service-item-title">AIソリューション</h3>
+      </div>
+      <div>
+        <p class="service-item-body">
+          AIを活用した業務効率化・コンテンツ制作の支援を行います。大企業向けの大規模なシステムではなく、中小事業者や個人事業主でも日常業務のなかで取り入れられる形で技術をお届けすることを重視しています。
+        </p>
+        <p class="service-item-body">
+          文章・画像・データの自動生成から、社内業務の自動化まで、目的に合った手段を一緒に考え、導入をサポートします。
+        </p>
+        <div class="service-tags">
+          <span class="service-tag">業務効率化</span>
+          <span class="service-tag">コンテンツ生成</span>
+          <span class="service-tag">AI導入支援</span>
+          <span class="service-tag">自動化</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 広告・Webマーケティング -->
+    <div class="service-item fade-in">
+      <div class="service-item-left">
+        <div class="service-item-num">04 — Marketing</div>
+        <h3 class="service-item-title">広告・Web<br>マーケティング</h3>
+      </div>
+      <div>
+        <p class="service-item-body">
+          デジタル広告の運用からWeb制作まで、集客の仕組みをトータルでサポートします。広告費を投じて終わりではなく、データを読み取りながら継続的に改善していく運用型の支援を基本としています。
+        </p>
+        <p class="service-item-body">
+          自社の民泊・不動産事業で実践しながら磨いた知見をもとに、実際の現場感覚に根ざした提案を行います。
+        </p>
+        <div class="service-tags">
+          <span class="service-tag">デジタル広告運用</span>
+          <span class="service-tag">Web制作</span>
+          <span class="service-tag">SNSマーケティング</span>
+          <span class="service-tag">SEO</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--dark" style="text-align:center;">
+  <div class="section-inner">
+    <p class="section-label fade-in">Contact</p>
+    <h2 class="section-heading fade-in" style="max-width:480px; margin-left:auto; margin-right:auto;">
+      事業に関するご相談はお気軽に
+    </h2>
+    <div class="fade-in">
+      <a href="contact.html" class="btn btn--light">お問い合わせページへ</a>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark">DFD</div>
+      <div class="footer-logo-sub">Digital &amp; Facility Design</div>
+      <div class="footer-info">
+        <!-- TODO: 郵便番号 803-0822 は仮置き。正式な郵便番号を確認後に修正してください -->
+        合同会社DFD<br>
+        〒803-0822 福岡県北九州市小倉北区中島1-3-14<br>
+        <a href="mailto:info@dfd-ai.com" style="color:rgba(244,240,230,0.45);">info@dfd-ai.com</a>
+      </div>
+      <div class="footer-copy">© 2026 DFD LLC.</div>
+    </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
