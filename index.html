@@ -74,20 +74,27 @@
       margin: 32px auto;
     }
 
-    /* 縦書きメインコピー */
+    /* メインコピー */
     .hero-copy-wrap {
       display: flex;
       justify-content: center;
     }
 
     .hero-copy {
-      writing-mode: vertical-rl;
       font-family: var(--font-mincho);
       font-size: clamp(20px, 3.5vw, 32px);
       font-weight: 600;
       color: var(--kinari);
       letter-spacing: 0.15em;
-      line-height: 1.5;
+      line-height: 1.8;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .sp-only { display: none; }
+
+    @media (max-width: 480px) {
+      .sp-only { display: inline; }
     }
 
     .hero-sub {
@@ -285,7 +292,7 @@
     <div class="hero-logo-sub">Digital &amp; Facility Design</div>
     <div class="hero-divider" aria-hidden="true"></div>
     <div class="hero-copy-wrap">
-      <p class="hero-copy">北九州から、人が集まる場所をつくる。</p>
+      <p class="hero-copy">北九州から、<br class="sp-only">人が集まる場所をつくる。</p>
     </div>
     <p class="hero-sub">AIと空間設計で、新しい価値をつくる。</p>
     <div class="hero-cta">
