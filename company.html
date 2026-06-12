@@ -83,10 +83,110 @@
       margin-top: 24px;
     }
 
+    /* ---- 理念セクション ---- */
+    .philosophy-section {
+      padding: var(--section-py) 32px;
+      background: var(--kinari);
+    }
+
+    .philosophy-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ミッション・ビジョン */
+    .phil-block {
+      margin-bottom: 56px;
+    }
+
+    .phil-block-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--aitetsu);
+      margin-bottom: 12px;
+    }
+
+    .phil-block-text {
+      font-family: var(--font-mincho);
+      font-size: clamp(20px, 2.8vw, 28px);
+      font-weight: 600;
+      line-height: 1.6;
+      color: var(--sumi);
+    }
+
+    .phil-block-sub {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(26,25,23,0.6);
+      margin-top: 8px;
+    }
+
+    /* バリュー */
+    .values-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-top: 16px;
+    }
+
+    .value-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      align-items: start;
+      background: var(--hakuji);
+      border: 1px solid rgba(26,25,23,0.07);
+      padding: 36px 40px;
+    }
+
+    .value-letter {
+      font-family: var(--font-mono);
+      font-size: 56px;
+      font-weight: 400;
+      color: rgba(43,76,111,0.15);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      padding-top: 4px;
+    }
+
+    .value-content {}
+
+    .value-title {
+      font-family: var(--font-mincho);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--sumi);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .value-body {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(26,25,23,0.65);
+    }
+
+    /* 理念セパレーター */
+    .phil-sep {
+      width: 40px;
+      height: 1px;
+      background: rgba(26,25,23,0.15);
+      margin: 56px 0;
+    }
+
     @media (max-width: 768px) {
       .company-grid { grid-template-columns: 1fr; }
       .company-block { padding: 32px 24px; }
       .mission-band { padding: 60px 20px; }
+      .philosophy-section { padding: var(--section-py) 20px; }
+      .value-item {
+        grid-template-columns: 52px 1fr;
+        gap: 20px;
+        padding: 28px 24px;
+      }
+      .value-letter { font-size: 40px; }
     }
   </style>
 </head>
@@ -119,10 +219,63 @@
   </div>
 </div>
 
+<!-- 経営理念 -->
+<section class="philosophy-section" aria-labelledby="philosophy-heading">
+  <div class="philosophy-inner">
+    <p class="section-label fade-in">01 — Philosophy</p>
+    <h2 id="philosophy-heading" class="section-heading fade-in">経営理念</h2>
+
+    <!-- ミッション -->
+    <div class="phil-block fade-in">
+      <p class="phil-block-label">Mission — 存在意義</p>
+      <p class="phil-block-text">北九州から、人が集まる場所をつくる。</p>
+    </div>
+
+    <div class="phil-sep" aria-hidden="true"></div>
+
+    <!-- ビジョン -->
+    <div class="phil-block fade-in">
+      <p class="phil-block-label">Vision — 目指す風景</p>
+      <p class="phil-block-text">古い建物と新しい技術が、当たり前に共存する街並みをつくる。</p>
+    </div>
+
+    <div class="phil-sep" aria-hidden="true"></div>
+
+    <!-- バリュー -->
+    <div class="fade-in">
+      <p class="phil-block-label">Values — 行動指針</p>
+      <p class="section-heading" style="font-size:clamp(18px,2.2vw,22px); margin-bottom:24px;">D・F・D それぞれの指針</p>
+      <div class="values-list">
+        <div class="value-item">
+          <div class="value-letter" aria-hidden="true">F</div>
+          <div class="value-content">
+            <p class="value-title">壊さず、活かす。</p>
+            <p class="value-body">スクラップ＆ビルドではなく再生。古い建物に新しい役割を与える。</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-letter" aria-hidden="true">D</div>
+          <div class="value-content">
+            <p class="value-title">道具は最先端、商いは誠実に。</p>
+            <p class="value-body">AIや新しい技術は徹底的に使う。ただし主役はあくまで人と場所。技術で奇をてらわない。</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-letter" aria-hidden="true">D</div>
+          <div class="value-content">
+            <p class="value-title">小さく試し、早く学ぶ。</p>
+            <p class="value-body">大きな賭けはしない。撤退の基準を決めてから始め、学びを次に活かす。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 会社概要テーブル -->
 <section class="section" aria-labelledby="profile-heading">
   <div class="section-inner">
-    <p class="section-label fade-in">01 — Profile</p>
+    <p class="section-label fade-in">02 — Profile</p>
     <h2 id="profile-heading" class="section-heading fade-in">基本情報</h2>
 
     <div class="fade-in">

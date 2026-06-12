@@ -194,10 +194,64 @@
       letter-spacing: 0.05em;
     }
 
+    /* ---- ビジョン帯 ---- */
+    .vision-band {
+      border-top: 1px solid rgba(26,25,23,0.08);
+      border-bottom: 1px solid rgba(26,25,23,0.08);
+      padding: 64px 32px;
+      background: var(--hakuji);
+    }
+
+    .vision-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .vision-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--aitetsu);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .vision-text {
+      font-family: var(--font-mincho);
+      font-size: clamp(15px, 2vw, 20px);
+      font-weight: 600;
+      color: var(--sumi);
+      line-height: 1.6;
+      letter-spacing: 0.05em;
+      flex: 1;
+    }
+
+    .vision-link {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--aitetsu);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+
+    .vision-link:hover { color: var(--akari); }
+
     @media (max-width: 768px) {
       .index-overview { grid-template-columns: 1fr; }
       .overview-item { padding: 32px 24px; }
       .cta-section { padding: var(--section-py) 20px; }
+      .vision-band { padding: 48px 20px; }
+      .vision-inner { flex-direction: column; gap: 16px; }
     }
   </style>
 </head>
@@ -244,6 +298,15 @@
     <div class="scroll-line"></div>
   </div>
 </section>
+
+<!-- ビジョン帯 -->
+<div class="vision-band" aria-label="ビジョン">
+  <div class="vision-inner">
+    <p class="vision-label fade-in">Vision</p>
+    <p class="vision-text fade-in">古い建物と新しい技術が、当たり前に共存する街並みをつくる。</p>
+    <a href="company.html#philosophy-heading" class="vision-link fade-in">経営理念を見る</a>
+  </div>
+</div>
 
 <!-- 事業概要 -->
 <section class="section" aria-labelledby="overview-heading">
