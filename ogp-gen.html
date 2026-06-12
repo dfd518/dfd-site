@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=JetBrains+Mono:wght@300;400&display=swap');
+
+    html {
+      width: 1200px;
+      height: 630px;
+    }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #1A1917;
+      font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+      position: relative;
+    }
+
+    /* 建築グリッド背景 */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(43,76,111,0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43,76,111,0.25) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* 対角線 */
+    .grid::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(43,76,111,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43,76,111,0.08) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* 左の縦ライン装飾 */
+    .accent-line-left {
+      position: absolute;
+      left: 80px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(200,119,46,0.6) 30%, rgba(200,119,46,0.6) 70%, transparent);
+    }
+
+    /* 右の縦ライン装飾 */
+    .accent-line-right {
+      position: absolute;
+      right: 80px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(43,76,111,0.4) 30%, rgba(43,76,111,0.4) 70%, transparent);
+    }
+
+    /* 上下の横ライン */
+    .accent-line-top {
+      position: absolute;
+      top: 60px;
+      left: 80px;
+      right: 80px;
+      height: 1px;
+      background: linear-gradient(to right, rgba(200,119,46,0.5), rgba(43,76,111,0.3), transparent);
+    }
+
+    .accent-line-bottom {
+      position: absolute;
+      bottom: 60px;
+      left: 80px;
+      right: 80px;
+      height: 1px;
+      background: linear-gradient(to right, rgba(43,76,111,0.3), rgba(200,119,46,0.5), transparent);
+    }
+
+    /* コンテンツ */
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+    }
+
+    .logo-dfd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 110px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: #F4F0E6;
+      line-height: 1;
+      text-indent: 0.18em; /* letter-spacing の補正 */
+    }
+
+    .logo-en {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-indent: 0.35em;
+      color: rgba(244,240,230,0.4);
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(244,240,230,0.2);
+      margin: 28px auto;
+    }
+
+    .tagline-ja {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: #F4F0E6;
+      line-height: 1.6;
+    }
+
+    .tagline-sub {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(244,240,230,0.5);
+      margin-top: 8px;
+    }
+
+    /* 右下の URL */
+    .url {
+      position: absolute;
+      bottom: 36px;
+      right: 96px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: rgba(244,240,230,0.3);
+      z-index: 1;
+    }
+
+    /* 左下の会社名 */
+    .company {
+      position: absolute;
+      bottom: 36px;
+      left: 96px;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: rgba(244,240,230,0.35);
+      z-index: 1;
+    }
+
+    /* 燈色のアクセントドット */
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      background: #C8772E;
+    }
+    .dot-1 { width: 4px; height: 4px; top: 60px; left: 80px; }
+    .dot-2 { width: 3px; height: 3px; bottom: 60px; right: 80px; }
+    .dot-3 { width: 2px; height: 2px; top: 60px; right: 80px; opacity: 0.6; }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="accent-line-left"></div>
+  <div class="accent-line-right"></div>
+  <div class="accent-line-top"></div>
+  <div class="accent-line-bottom"></div>
+  <div class="dot dot-1"></div>
+  <div class="dot dot-2"></div>
+  <div class="dot dot-3"></div>
+
+  <div class="content">
+    <div class="logo-dfd">DFD</div>
+    <div class="logo-en">Digital &amp; Facility Design</div>
+    <div class="divider"></div>
+    <div class="tagline-ja">北九州から、人が集まる場所をつくる。</div>
+    <div class="tagline-sub">AIと空間設計で、新しい価値をつくる。</div>
+  </div>
+
+  <div class="company">合同会社DFD</div>
+  <div class="url">dfd-ai.com</div>
+</body>
+</html>
