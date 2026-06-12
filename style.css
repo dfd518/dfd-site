@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap');
+
 /* ============================================================
    DFD Corporate Site — Shared Styles
    カラーパレット・タイポグラフィ・共通コンポーネント
    ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap');
 
 /* ---- CSS 変数 ---- */
 :root {
