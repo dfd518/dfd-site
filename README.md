@@ -158,7 +158,6 @@ Cloudflare Pages が変更を検知して、数分で本番サイトに反映さ
 
 コード内に `TODO` コメントが入っています。
 
-- **郵便番号** `803-0822` は仮置きです。正式な郵便番号を確認して、全ファイルの該当箇所を修正してください（`index.html`, `company.html`, `services.html`, `contact.html`, `privacy.html`, `style.css` の TODO コメントを検索）
 - **OGP 画像** `ogp.png` は未作成です。SNS でシェアされたときのサムネイル画像を `1200×630px` で作成し、ルートに `ogp.png` として置いてください
 - **Google フォーム** `contact.html` にコメントアウトで埋め込み用プレースホルダーがあります。フォーム導入時はコメントを外して URL を設定してください
 
