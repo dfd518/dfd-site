@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>合同会社DFD — Digital &amp; Facility Design</title>
-  <meta name="description" content="北九州を拠点に、民泊・不動産再生・AIソリューション・Webマーケティングで人が集まる場所をつくる合同会社DFDの公式サイトです。">
+  <meta name="description" content="古さは資産、新しさは道具。掛け合わせた先の景色を、つくる。北九州を拠点に、民泊・不動産再生・AIソリューション・Webマーケティングを手がける合同会社DFDの公式サイトです。">
 
   <!-- OGP -->
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="合同会社DFD — Digital &amp; Facility Design">
-  <meta property="og:description" content="北九州から、人が集まる場所をつくる。AIと空間設計で、新しい価値をつくる。">
+  <meta property="og:description" content="古さは資産、新しさは道具。掛け合わせた先の景色を、つくる。合同会社DFD — Digital & Facility Design">
   <meta property="og:url"         content="https://dfd-ai.com/">
   <meta property="og:image"       content="https://dfd-ai.com/ogp.png">
   <meta name="twitter:card"       content="summary_large_image">
@@ -74,27 +74,27 @@
       margin: 32px auto;
     }
 
-    /* メインコピー */
+    /* メインコピー（縦書き2列） */
     .hero-copy-wrap {
       display: flex;
+      flex-direction: row-reverse;
       justify-content: center;
+      gap: 20px;
     }
 
     .hero-copy {
+      writing-mode: vertical-rl;
       font-family: var(--font-mincho);
       font-size: clamp(20px, 3.5vw, 32px);
       font-weight: 600;
       color: var(--kinari);
       letter-spacing: 0.15em;
-      line-height: 1.8;
-      text-align: center;
-      padding: 0 16px;
+      line-height: 1.6;
     }
 
-    .sp-only { display: none; }
-
     @media (max-width: 480px) {
-      .sp-only { display: inline; }
+      .hero-copy-wrap { gap: 12px; }
+      .hero-copy { font-size: clamp(18px, 6vw, 26px); }
     }
 
     .hero-sub {
@@ -292,9 +292,10 @@
     <div class="hero-logo-sub">Digital &amp; Facility Design</div>
     <div class="hero-divider" aria-hidden="true"></div>
     <div class="hero-copy-wrap">
-      <p class="hero-copy">北九州から、<br class="sp-only">人が集まる場所をつくる。</p>
+      <p class="hero-copy">古さは資産、新しさは道具。</p>
+      <p class="hero-copy">掛け合わせた先の景色を、つくる。</p>
     </div>
-    <p class="hero-sub">AIと空間設計で、新しい価値をつくる。</p>
+    <p class="hero-sub">まだない掛け合わせを、デザインする。</p>
     <div class="hero-cta">
       <a href="services.html" class="btn btn--light">事業内容を見る</a>
     </div>
